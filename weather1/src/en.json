@@ -1,0 +1,10 @@
+{
+  "weather": "Weather",
+  "selectCity": "Select a city",
+  "loading": "Loading...",
+  "noWeatherData": "No weather data available",
+  "current": "Current:",
+  "high": "High:",
+  "low": "Low:",
+  "windSpeed": "Wind Speed:"
+}
