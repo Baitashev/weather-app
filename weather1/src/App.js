@@ -6,6 +6,7 @@ import { Navbar, Nav, Row, Col, Container, Form, Button, Tabs, Tab } from "react
 import { useTranslation } from 'react-i18next';
 import WeatherMap from './MapComponent';
 import i18n from './i18n';
+import axios from 'axios';
 
 const App = () => {
     const { t } = useTranslation();
@@ -18,12 +19,12 @@ const App = () => {
         const forecastURL = `https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&exclude=hourly,minutely&appid=b1b35bba8b434a28a0be2a3e1071ae5b&units=metric&lang=${i18n.language}`;
 
         try {
-            const response = await fetch(URL);
-            const data = await response.json();
+            const response = await axios.get(URL);
+            const data = response.data;
             setSearchResult(data);
 
-            const forecastResponse = await fetch(forecastURL.replace('{lat}', data.coord.lat).replace('{lon}', data.coord.lon));
-            const forecastData = await forecastResponse.json();
+            const forecastResponse = await axios.get(forecastURL.replace('{lat}', data.coord.lat).replace('{lon}', data.coord.lon));
+            const forecastData = forecastResponse.data;
             setForecast(forecastData);
         } catch (error) {
             console.error('Error fetching weather data:', error);
