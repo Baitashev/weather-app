@@ -1,43 +1,103 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
+/* App.css */
+
+/* Общие стили */
 body {
   font-family: 'Nunito', sans-serif;
 }
 
-.App {
+h3 {
+  margin-bottom: 20px; /* Добавляем отступ снизу для заголовков */
+}
+
+/* Стилизуем кнопку поиска */
+.search-button {
+  margin-top: 10px; /* Добавляем отступ сверху */
+}
+
+/* Стилизуем блок с результатами */
+.result-container {
+  margin-top: 20px; /* Добавляем отступ сверху */
+}
+
+/* Стилизуем блок с картой */
+.map-container {
+  height: 400px;
+  margin-top: 20px; /* Добавляем отступ сверху */
+}
+
+/* Добавляем стили к табам */
+.weather-tabs {
+  margin-top: 20px; /* Добавляем отступ сверху */
+}
+
+/* Стилизуем отдельный день прогноза */
+.forecast-day {
+  margin-top: 20px; /* Добавляем отступ сверху */
+  border: 1px solid #ddd; /* Добавляем границу */
+  padding: 10px; /* Добавляем отступы внутри блока */
+  border-radius: 5px; /* Закругляем углы */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Добавляем тень */
+}
+
+/* Добавляем стили к иконке погоды */
+.weather-icon {
+  margin-right: 10px; /* Добавляем отступ справа */
+}
+
+/* Добавляем стили к тексту с датой */
+.date-text {
+  font-weight: bold; /* Делаем текст жирным */
+  margin-bottom: 10px; /* Добавляем отступ снизу */
+}
+
+/* Стилизуем текст с информацией о погоде */
+.weather-info {
+  margin-bottom: 10px; /* Добавляем отступ снизу */
+}
+
+.search-button {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.weather-icon {
+  transition: transform 0.3s ease;
+}
+
+.weather-icon.animated {
+  transform: rotate(360deg) scale(1.2);
+  transition: transform 0.5s ease;
+}
+
+.forecast-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  width: 100%;
+}
+
+.forecast-day {
+  flex: 0 0 auto;
+  margin: 10px;
+  min-width: 150px; /* Ensure each day box has a minimum width */
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.weather-icon.animated {
+  animation: spin 1s linear infinite;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.chart-container {
+  margin-top: 20px;
+  width: 100%;
 }
