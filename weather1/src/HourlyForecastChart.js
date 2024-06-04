@@ -7,8 +7,7 @@ import { Line } from 'react-chartjs-2';
 const HourlyForecastChart = ({ hourlyData }) => {
     const { t } = useTranslation();
 
-    // Check if hourlyData is available and has length greater than 0
-    if (!hourlyData || hourlyData.length === 0) {
+     if (!hourlyData || hourlyData.length === 0) {
         return null;
     }
 

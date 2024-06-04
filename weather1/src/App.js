@@ -35,7 +35,7 @@ const App = () => {
         <Router>
             <div>
                 <Navbar bg="light">
-                    <Navbar.Brand>{t('weather')} App</Navbar.Brand>
+                    <Navbar.Brand>{t('weather')} Приложение</Navbar.Brand>
                     <Nav className="ml-auto">
                         <Nav.Link onClick={() => i18n.changeLanguage('ru')}>{t('ru')}</Nav.Link>
                         <Nav.Link onClick={() => i18n.changeLanguage('en')}>{t('en')}</Nav.Link>
@@ -45,21 +45,27 @@ const App = () => {
                     <Row>
                         <Col md={6}>
                             <h3>{t('searchPlaceholder')}</h3>
-                            <Form.Group controlId="formSearchCity">
-                                <Form.Control
-                                    type="text"
-                                    placeholder={t('searchPlaceholder')}
-                                    value={searchQuery}
-                                    onChange={(e) => setSearchQuery(e.target.value)}
-                                />
-                            </Form.Group>
-                            <Button variant="primary" onClick={handleSearch} className="search-button">
-                                {t('searchButton')}
-                            </Button>
+                            {/* Group input and button together with flexbox */}
+                            <div style={{ display: 'flex', alignItems: 'center', marginBottom: 15 }}>
+                                <Form.Group controlId="formSearchCity">
+                                    <Form.Control
+                                        type="text"
+                                        placeholder={t('searchPlaceholder')}
+                                        value={searchQuery}
+                                        onChange={(e) => setSearchQuery(e.target.value)}
+                                    />
+                                </Form.Group>
+                                <Button variant="primary" onClick={handleSearch} className="search-button" style={{ marginLeft: 10 }}>
+                                    {t('searchButton')}
+                                </Button>
+                            </div>
                             {searchResult && (
                                 <div className="result-container">
                                     <WeatherDisplay weatherData={searchResult} />
                                     {forecast && <ForecastTabs forecastData={forecast} />}
+                                    <Link to="/weather-details" state={{ weatherData: searchResult }}>
+                                        <Button variant="primary">{t('detailsButton')}</Button>
+                                    </Link>  {/* Added "Подробнее" (detailsButton) button */}
                                 </div>
                             )}
                         </Col>
