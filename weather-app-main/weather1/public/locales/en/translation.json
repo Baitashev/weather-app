@@ -1,0 +1,19 @@
+{
+  "weather": "Weather",
+  "searchPlaceholder": "Search city",
+  "searchButton": "Search",
+  "in": "in",
+  "temperature": "Temperature",
+  "feelsLike": "Feels Like",
+  "high": "High",
+  "low": "Low",
+  "humidity": "Humidity",
+  "chanceOfPrecipitation": "Chance of Precipitation",
+  "today": "Today",
+  "tomorrow": "Tomorrow",
+  "3days": "3 Days",
+  "7days": "7 Days",
+  "ru": "RU",
+  "en": "EN",
+  "search": "Search"
+}

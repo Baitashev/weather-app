@@ -1,0 +1,19 @@
+{
+  "weather": "Погода",
+  "searchPlaceholder": "Поиск города",
+  "searchButton": "Поиск",
+  "in": "в",
+  "temperature": "Температура",
+  "feelsLike": "Ощущается как",
+  "high": "Максимум",
+  "low": "Минимум",
+  "humidity": "Влажность",
+  "chanceOfPrecipitation": "Вероятность осадков",
+  "today": "Сегодня",
+  "tomorrow": "Завтра",
+  "3days": "3 Дня",
+  "7days": "7 Дней",
+  "ru": "RU",
+  "en": "EN",
+  "Search": "Поиск"
+}
